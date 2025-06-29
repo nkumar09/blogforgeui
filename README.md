@@ -19,7 +19,7 @@ This project uses **React**, **Tailwind CSS**, and **Vite** for an ultra-fast, m
 
 ## 📂 Project Structure
 
-\`\`\`
+```
 blogforge-ui/
 ├── public/
 ├── src/
@@ -32,7 +32,7 @@ blogforge-ui/
 ├── index.html
 ├── package.json
 └── tailwind.config.js
-\`\`\`
+```
 
 ---
 
@@ -40,30 +40,30 @@ blogforge-ui/
 
 ### 1️⃣ Clone the repo
 
-\`\`\`bash
+```bash
 git clone https://github.com/yourusername/blogforge-ui.git
 cd blogforge-ui
-\`\`\`
+```
 
 ### 2️⃣ Install dependencies
 
-\`\`\`bash
+```bash
 npm install
-\`\`\`
+```
 
 ### 3️⃣ Configure environment
 
-- Copy \`.env.example\` to \`.env\` and update any needed variables, e.g. Firebase keys:
-  \`\`\`env
+- Copy `.env.example` to `.env` and update any needed variables, e.g. Firebase keys:
+  ```env
   VITE_FIREBASE_API_KEY=your_firebase_api_key
   VITE_FIREBASE_PROJECT_ID=your_project_id
-  \`\`\`
+  ```
 
 ### 4️⃣ Run the development server
 
-\`\`\`bash
+```bash
 npm run dev
-\`\`\`
+```
 
 Open [http://localhost:5173](http://localhost:5173) to see BlogForge UI in action.
 
@@ -71,9 +71,9 @@ Open [http://localhost:5173](http://localhost:5173) to see BlogForge UI in actio
 
 ## 🌑 Customization
 
-- **Colors & Theme**: Tweak colors or gradient backgrounds in \`tailwind.config.js\`.
-- **Animations**: Modify or add micro-animations in component CSS or use Tailwind's \`animate-*\` utilities.
-- **Responsive Layout**: Adjust layouts in component files inside \`/src/pages/\` or \`/src/components/\`.
+- **Colors & Theme**: Tweak colors or gradient backgrounds in `tailwind.config.js`.
+- **Animations**: Modify or add micro-animations in component CSS or use Tailwind's `animate-*` utilities.
+- **Responsive Layout**: Adjust layouts in component files inside `/src/pages/` or `/src/components/`.
 
 ---
 
@@ -86,9 +86,9 @@ Open [http://localhost:5173](http://localhost:5173) to see BlogForge UI in actio
 
 ## 🛠️ Scripts
 
-- \`npm run dev\` — start local development server.
-- \`npm run build\` — create production-ready build.
-- \`npm run preview\` — locally preview production build.
+- `npm run dev` — start local development server.
+- `npm run build` — create production-ready build.
+- `npm run preview` — locally preview production build.
 
 ---
 
@@ -97,9 +97,9 @@ Open [http://localhost:5173](http://localhost:5173) to see BlogForge UI in actio
 We welcome contributions! To help:
 
 1. Fork this repo.
-2. Create your feature branch (\`git checkout -b feat/my-feature\`).
-3. Commit your changes (\`git commit -m 'feat: add amazing feature'\`).
-4. Push to your branch (\`git push origin feat/my-feature\`).
+2. Create your feature branch (`git checkout -b feat/my-feature`).
+3. Commit your changes (`git commit -m 'feat: add amazing feature'`).
+4. Push to your branch (`git push origin feat/my-feature`).
 5. Open a Pull Request.
 
 ---
