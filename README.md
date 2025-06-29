@@ -1,4 +1,3 @@
-cat <<'EOF' > README.md
 # 🚀 BlogForge UI
 
 Welcome to **BlogForge UI**, the sleek, dark-themed frontend of [BlogForge AI](https://your-link-here.com) — an agentic AI platform empowering bloggers of every level to create captivating posts tailored to their chosen theme and style.
@@ -126,4 +125,3 @@ For questions, suggestions, or feedback, please reach out via [GitHub Issues](ht
 ---
 
 Happy blogging with **BlogForge AI** — may your words inspire the world! ✍️🌟
-EOF
