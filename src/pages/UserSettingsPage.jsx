@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PageLayout from "../components/PageLayout";
+import { toast } from "react-toastify";
 import { generateTopics } from "../services/blogApi"; // ⬅️ Import new API function
 
 const tones = ["Conversational", "Analytical", "Contemplative"];
@@ -27,7 +28,8 @@ export default function UserSettingsPage() {
       navigate("/topics", { state: { settings, topics } });
     } catch (error) {
       console.error("Failed to generate topics:", error);
-      alert("Error generating topics. Please try again.");
+
+      toast.error('Error generating topics. Please try again.');
     } finally {
       setLoading(false);
     }

@@ -1,5 +1,7 @@
+const API_URL = import.meta.env.VITE_API_URL;
+
 export async function generateTopics(inputs) {
-  const response = await fetch("http://127.0.0.1:8000/generate-topics", {
+  const response = await fetch(`${API_URL}/generate-topics`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(inputs),
@@ -14,7 +16,7 @@ export async function generateTopics(inputs) {
 }
 
 export async function generateBlog(inputs) {
-  const response = await fetch("http://127.0.0.1:8000/generate-blog", {
+  const response = await fetch(`${API_URL}/generate-blog`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(inputs),
