@@ -1,18 +1,36 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import PageLayout from "../components/PageLayout";
+import { generateTopics } from "../services/blogApi"; // ⬅️ Import new API function
 
 const tones = ["Conversational", "Analytical", "Contemplative"];
 const depths = ["Shallow", "Medium", "In-Depth"];
 
-export default function UserSettingsPage({ onSubmit }) {
+export default function UserSettingsPage() {
+  const navigate = useNavigate();
   const [theme, setTheme] = useState("");
   const [tone, setTone] = useState(tones[0]);
   const [depth, setDepth] = useState(depths[1]);
   const [wordCount, setWordCount] = useState(800);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    onSubmit?.({ theme, tone, depth, wordCount });
+    setLoading(true);
+
+    const settings = { theme, preferred_tone: tone, desired_depth: depth, word_count: wordCount };
+
+    try {
+      const response = await generateTopics(settings);
+      const topics = response.topics;
+
+      navigate("/topics", { state: { settings, topics } });
+    } catch (error) {
+      console.error("Failed to generate topics:", error);
+      alert("Error generating topics. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -29,7 +47,7 @@ export default function UserSettingsPage({ onSubmit }) {
     >
       <form
         className="bg-neutral-900/80 backdrop-blur-md rounded-xl shadow-xl p-8 w-full max-w-lg mx-auto border border-neutral-800
-        transition-transform duration-200 ease-in-out hover:scale-[1.01] active:scale-95"
+        transition-transform duration-200 ease-in-out hover:scale-[1.01]"
         onSubmit={handleSubmit}
       >
         <h2 className="text-xl font-semibold text-blue-200 mb-6">Blog Settings</h2>
@@ -79,8 +97,9 @@ export default function UserSettingsPage({ onSubmit }) {
           type="submit"
           className="w-full bg-blue-700 text-white font-semibold py-2 rounded hover:bg-blue-800
           transition-all duration-200 ease-in-out focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 hover:shadow-lg active:scale-95"
+          disabled={loading}
         >
-          Generate Topics
+          {loading ? "Generating..." : "Generate Topics"}
         </button>
       </form>
     </PageLayout>

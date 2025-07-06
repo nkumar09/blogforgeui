@@ -22,3 +22,17 @@
   50% { opacity: .7; }
 }
 .animate-pulse-slow { animation: pulse-slow 2.5s cubic-bezier(0.4,0,0.6,1) infinite; }
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient {
+  animation: gradientShift 15s ease infinite;
+  background-size: 200% 200%;
+}
