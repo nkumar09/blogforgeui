@@ -1,4 +1,6 @@
-const API_URL = import.meta.env.VITE_API_URL;
+require('dotenv').config()
+
+const API_URL = process.env.VITE_API_URL;
 
 export async function generateTopics(inputs) {
   const response = await fetch(`${API_URL}/generate-topics`, {
